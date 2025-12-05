@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull:
+    branches:
+      - main
 
 
 
@@ -55,6 +58,9 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/prediction-app:latest
 
+
       - name:  Image digest
         run:  echo ${{ steps.build-and-publish.outputs.digest }}
           
+
+   

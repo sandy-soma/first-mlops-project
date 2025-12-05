@@ -12,7 +12,7 @@ on:
 
 jobs:
   Diabeties_prediction:
-    runs-on: python:3.14
+    runs-on: python:latest
   
 
     steps:
@@ -31,7 +31,7 @@ jobs:
 
   Docker_build:
     needs: Diabeties_prediction
-    runs-on: python:3.14
+    runs-on: python:latest
   
     steps:
       - name:  checkout code

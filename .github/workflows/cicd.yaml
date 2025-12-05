@@ -12,7 +12,7 @@ on:
 
 jobs:
   Diabeties_prediction:
-    runs-on: python:latest
+    runs-on: ubuntu:latest
   
 
     steps:
@@ -26,12 +26,13 @@ jobs:
 
       - name: Install Dependencies
         run: |
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
           python train.py
 
   Docker_build:
     needs: Diabeties_prediction
-    runs-on: python:latest
+    runs-on: ubuntu-latest
   
     steps:
       - name:  checkout code
